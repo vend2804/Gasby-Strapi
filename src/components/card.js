@@ -19,7 +19,7 @@ const Card = ({ article }) => {
           <p id="title" className="uk-text-large">
             {article.node.title}
           </p>
-          <div>
+              <div>
             <hr className="uk-divider-small" />
             <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
               <div>

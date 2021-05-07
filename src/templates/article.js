@@ -3,7 +3,8 @@ import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import Moment from "react-moment";
 import Layout from "../components/layout";
-import Markdown from "react-markdown";
+import ReactMarkdown from "react-markdown";
+
 
 export const query = graphql`
   query ArticleQuery($slug: String!) {
@@ -55,18 +56,20 @@ const Article = ({ data }) => {
           data-uk-img
         >
           <h1>{article.title}</h1>
+          <ReactMarkdown source={article.content} escapeHtml={true} />
         </div>
         <div class="uk-card-body">
 
               <div>
         {article.description}
 
+        
             </div>
 
 
         <div className="uk-section">
           <div className="uk-container uk-container-small">
-            <Markdown source={article.content} escapeHtml={false} />
+          <ReactMarkdown children={article.content} />
 
             <hr className="uk-divider-small" />
 
